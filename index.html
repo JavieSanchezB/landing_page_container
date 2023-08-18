@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza storage container collapsible</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #333;
+      color: white;
+    }
+   
+   /* Carrusel styles */
+    #carousel {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+
+     /* Floating button styles */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color:transparent; /* Amazon's orange color */
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 100;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .small-image {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+  
+}
+.buy-text {
+      font-weight: bold;
+      color: black;
+    }
+       /* Add more styles as needed */
+    
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pizza storage container collapsible</h1>
+    <p>The world's most versatile reusable storage containers</p>
+  </header>
+ <main>
+    <section id="carousel">
+      <div class="slide">
+        <img src="images/klamz-1.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">The world's most versatile reusable storage containers</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-2.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">Perfect for storing food, toiletries, and more</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-3.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">Easy to clean and reusable</p>
+      </div>
+      <!-- Repeat the above three slide elements with different images and text -->
+      <div class="slide">
+        <img src="images/klamz-4.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">Organize your items with style</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-5.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">Stylish and sustainable storage solutions</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-6.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text" >Keep your belongings fresh and tidy</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-7.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text" >Quality storage for modern living</p>
+      </div>
+      <div class="slide">
+        <img src="images/klamz-8.jpg" alt="Klamz">
+        <h2>Pizza storage container collapsible</h2>
+        <p class="buy-text">Experience the convenience of Klamz containers</p>
+      </div>
+    </section>
+ 
+  </main>
+  <footer>
+    <span class="buy-text">&copy; 2023 Klamz</ <span>
+  </footer>
+   
+     <div class="floating-container"></div> 
+       
+       <a href="https://www.amazon.com/Contenedor-almacenamiento-contenedor-reutilizable-alimenticio/dp/B0BXVH9RHG/ref=mp_s_a_1_1_sspa?crid=2S3TPGTPHV4GA&keywords=Klamz&qid=1692073242&sprefix=klam%2Caps%2C238&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9waG9uZV9zZWFyY2hfYXRm&psc=1" target="_blank" class="floating-button">
+        <span class="buy-text">Buy on now</span>
+        <img src="images/logo_boton_amazon.png" alt="Amazon Logo" class="small-image">
+    
+  </a>
+    </div>
+  <script>
+    const carousel = document.getElementById("carousel");
+    const slides = carousel.getElementsByClassName("slide");
+    let currentSlide = 0;
+
+    function showSlide(slideIndex) {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.transform = `translateX(-${slideIndex * 100}%)`;
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  </script>
+</body>
+</html>
